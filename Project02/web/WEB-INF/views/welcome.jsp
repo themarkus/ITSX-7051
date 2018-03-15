@@ -15,6 +15,6 @@
             <input type="radio" name="movie" value="Machina">Ex Machina<br>
             <input type="submit" value="Submit">
         </form>
-        
+
     </body>
 </html>
