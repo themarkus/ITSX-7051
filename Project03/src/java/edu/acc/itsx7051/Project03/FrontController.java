@@ -13,8 +13,21 @@ public class FrontController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/index.jsp")
+        String action = "";
+        String requestAction = request.getParameter("action");
+        if (requestAction != null) {
+            action = requestAction;
+        }
+        switch (action) {
+            case "InvalidateSession":
+                InvalidateSession(request);break;
+        }
+        request.getRequestDispatcher("/WEB-INF/counter.jsp")
                 .forward(request, response);
+    }
+
+    private void InvalidateSession(HttpServletRequest request) {
+        request.getSession().invalidate();
     }
 
     @Override
