@@ -1,0 +1,22 @@
+
+Goals:
+    Use HTTP POST
+    Maintain complex session state over multiple requests
+    Learn how to the end the HTTP session
+
+Requirements:
+    Create a Heads-Tails coin flip game 
+    The game state should be managed by a game model object in the HTTP session
+    The game page should 
+        Display the current score (number of games played an win percentage) 
+    Display some information about the last flip, if any
+    Present the user with a the option to guess HEADS or TAILS or to end the game
+    A HEADS or TAILS choice should POST to the game servlet and update the game state 
+        Use the redirect after POST pattern
+    If the user ends the game, display and end game page with
+        The final score
+        An option to start over (reset the HTTP session)
+
+Bonus:
+    Students seeking a little more challenge are encourage to substitute a slightly more advanced game of chance like 
+    Rock/Paper/Scissors (Lizard/Spock) that requires the user to select between a finite number of choices.
