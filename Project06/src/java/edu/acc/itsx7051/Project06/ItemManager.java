@@ -1,0 +1,17 @@
+package edu.acc.itsx7051.Project06;
+
+import java.util.ArrayList;
+
+public class ItemManager {
+    ArrayList<Item> items = new ArrayList<> ();
+    
+    public Item[] getAllItems() {
+
+        return (Item[]) this.items.toArray(new Item[]{});
+    }
+    
+    public void addItems(Item newItems) {
+        // insert into food values (?) 
+        items.add(newItems);
+    }
+}
