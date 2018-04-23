@@ -11,7 +11,6 @@ public class UserManager {
     }
 
     public User scanLogins(String name, String password) {
-
         for (User user : users) {
             if (loginMatches(user, name, password)) {
                 return user;
@@ -21,7 +20,6 @@ public class UserManager {
     }
 
     public void addUser(User newUser) {
-        // insert into food values (?) 
         users.add(newUser);
     }
 }

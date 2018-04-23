@@ -10,8 +10,7 @@ public class ItemManager {
         return (Item[]) this.items.toArray(new Item[]{});
     }
     
-    public void addItems(Item newItems) {
-        // insert into food values (?) 
-        items.add(newItems);
+    public void addItem(Item newItem) {
+        items.add(newItem);
     }
 }

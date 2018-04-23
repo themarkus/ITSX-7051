@@ -16,8 +16,9 @@
 
             <form method="POST" action="/Project06/login">
                 <input type="text" name="username" placeholder="Username" /> <br>
-                <input type="text" name="password" placeholder="Password" /> <br>
-                <input type="submit" value="Submit comment" />         
+                <input type="password" name="password" placeholder="Password" /> <br>
+                <input type="submit" value="Login" />  
+                <a href="/Project06/">Default</a>
             </form>
     </body>
 </html>

@@ -20,13 +20,19 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String enteredUsername = request.getParameter("username");
         String enteredPassword = request.getParameter("password");
+        String hashedPassword = PasswordHash.hashPassword(enteredPassword);
+        System.out.println(hashedPassword);
         
         if ((enteredUsername == null || enteredUsername.length() == 0) || (enteredPassword == null || enteredPassword.length() == 0)) {
             request.setAttribute("error", "You didn't enter both a username and password");
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         } else {
-            UserManager userManager = new UserManager();
-            if (userManager.scanLogins(enteredUsername, enteredPassword) != null) {
+            UserManager userManager = (UserManager) getServletContext().getAttribute("userManager");
+            User user = (User) (userManager.scanLogins(enteredUsername, hashedPassword));
+            
+            if (user != null) {
+               
+               request.getSession().setAttribute("user", user);
                response.sendRedirect("/Project06/home"); 
             } else {
              request.setAttribute("error", "Your username and password didn't match a known login");
